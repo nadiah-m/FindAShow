@@ -1,4 +1,4 @@
-# FindAShow
+# Find A Show
 
 **Description**
 
