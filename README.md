@@ -15,6 +15,7 @@ Find A Show provides users with show recommendations based on your preferred str
 ## User Stories
 
 1. On the first page, user will be given the choices below:
+
    -Movies or tv series
    
    -Genre (multiple options)
