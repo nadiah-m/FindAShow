@@ -19,10 +19,8 @@ Find A Show provides users with show recommendations based on your preferred str
    -Movies or tv series
    
    -Genre (multiple options)
-  
-   -Streaming site (Netflix/Disney/Amazon (multiple options))
-   
-   -User rating
+
+   -Length of show
    
 2. Button to submit
 

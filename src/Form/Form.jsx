@@ -1,22 +1,60 @@
 import React from "react";
+import genres from "./GenreData";
+import {useState} from "react";
 
 function Form() {
+
+const [checkedState, setCheckedState] = useState(
+  new Array(genres.length).fill(false)
+);
+
+console.log(checkedState)
+
+const handleOnChange = (position) => {
+  const updateCheckedState = checkedState.map((item, index) => index === position? !item : item);
+
+  setCheckedState(updateCheckedState);
+
+  console.log("updateCheckedState",updateCheckedState)
+}
+
   return (
     <>
-      <form>
+      <form> 
+        <h3>Select Type</h3>
         <div>
           <input type="checkbox" name="movie" />
-          <label for="movie">Movies</label>
+          <label htmlFor="movie">Movies</label>
           <input type="checkbox" name="tv" />
-          <label for="tv">TV series</label>
+          <label htmlFor="tv">TV series</label>
         </div>
 
-        <p>Choose genre:</p>
+        <h3>Select Genre</h3>
+        <ul className="genre-list">
+          {genres.map(({ name, id }, index) => {
+            return (
+              <li key={index}>
+                <div className="genre-list-item">
+                  <input
+                    type="checkbox"
+                    id={id}
+                    name={name}
+                    value={id}
+                    checked={checkedState[index]}
+                    onChange={() => handleOnChange(index)}
+                  />
+                  <label htmlFor={name}>{name}</label>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+
         <div>
           <input type="checkbox" value="genre" name="action" />
-          <label for="action">Action</label>
+          <label htmlFor="action">Action</label>
 
-          <input type="checkbox" value="genre" name="adventure" />
+          {/* <input type="checkbox" value="genre" name="adventure" />
           <label for="adventure">Adventure</label>
 
           <input type="checkbox" value="genre" name="animation" />
@@ -29,37 +67,25 @@ function Form() {
           <label for="drama">Drama</label>
 
           <input type="checkbox" value="genre" name="romance" />
-          <label for="romance">Romance</label>
+          <label for="romance">Romance</label> */}
         </div>
 
         <p>Choose length of show:</p>
         <div>
           <input type="checkbox" value="time" name="30" />
-          <label for="30">30 mins</label>
+          <label htmlFor="30">30 mins</label>
 
           <input type="checkbox" value="time" name="45" />
-          <label for="40">45 mins</label>
+          <label htmlFor="40">45 mins</label>
 
           <input type="checkbox" value="time" name="60" />
-          <label for="60">60 mins</label>
+          <label htmlFor="60">60 mins</label>
 
           <input type="checkbox" value="time" name="120" />
-          <label for="120">120 mins</label>
+          <label htmlFor="120">120 mins</label>
 
           <input type="checkbox" value="time" name="180" />
-          <label for="180">180 mins</label>
-        </div>
-
-        <p>Streaming sites:</p>
-        <div>
-          <input type="checkbox" value="streaming" name="netflix" />
-          <label for="netflix">Netflix</label>
-
-          <input type="checkbox" value="streaming" name="amazon" />
-          <label for="amazon">Amazon Prime</label>
-
-          <input type="checkbox" value="streaming" name="disney" />
-          <label for="disney">Disney Plus</label>
+          <label htmlFor="180">180 mins</label>
         </div>
       </form>
 
