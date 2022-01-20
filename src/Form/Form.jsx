@@ -1,33 +1,46 @@
 import React from "react";
 import genres from "./GenreData";
-import {useState} from "react";
+import { useState } from "react";
+import Type from "./Type";
 
 function Form() {
+  const [genreState, setGenreState] = useState(
+    new Array(genres.length).fill(false)
+  );
 
-const [checkedState, setCheckedState] = useState(
-  new Array(genres.length).fill(false)
-);
+  const handleOnChange = (position) => {
+    const updateGenreState = genreState.map((item, index) =>
+      index === position ? !item : item
+    );
 
-console.log(checkedState)
+    setGenreState(updateGenreState);
+  };
 
-const handleOnChange = (position) => {
-  const updateCheckedState = checkedState.map((item, index) => index === position? !item : item);
+  const getGenreArray = genreState.map((item, index) => {
+    if (item === true) {
+      return genres[index].id;
+    } else return false;
+  });
 
-  setCheckedState(updateCheckedState);
+  const removeFalseInput = (arr) => {
+    return arr.filter((value) => value);
+  };
 
-  console.log("updateCheckedState",updateCheckedState)
-}
+  const getGenreValue = removeFalseInput(getGenreArray);
+  console.log(getGenreValue);
 
   return (
     <>
-      <form> 
-        <h3>Select Type</h3>
+      
+        <Type />
+        <form>
+        {/* <h3>Select Type</h3>
         <div>
           <input type="checkbox" name="movie" />
           <label htmlFor="movie">Movies</label>
           <input type="checkbox" name="tv" />
           <label htmlFor="tv">TV series</label>
-        </div>
+        </div> */}
 
         <h3>Select Genre</h3>
         <ul className="genre-list">
@@ -40,7 +53,7 @@ const handleOnChange = (position) => {
                     id={id}
                     name={name}
                     value={id}
-                    checked={checkedState[index]}
+                    checked={genreState[index]}
                     onChange={() => handleOnChange(index)}
                   />
                   <label htmlFor={name}>{name}</label>
@@ -49,26 +62,6 @@ const handleOnChange = (position) => {
             );
           })}
         </ul>
-
-        <div>
-          <input type="checkbox" value="genre" name="action" />
-          <label htmlFor="action">Action</label>
-
-          {/* <input type="checkbox" value="genre" name="adventure" />
-          <label for="adventure">Adventure</label>
-
-          <input type="checkbox" value="genre" name="animation" />
-          <label for="animation">Animation</label>
-
-          <input type="checkbox" value="genre" name="comedy" />
-          <label for="comedy">Comedy</label>
-
-          <input type="checkbox" value="genre" name="drama" />
-          <label for="drama">Drama</label>
-
-          <input type="checkbox" value="genre" name="romance" />
-          <label for="romance">Romance</label> */}
-        </div>
 
         <p>Choose length of show:</p>
         <div>
