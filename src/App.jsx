@@ -1,11 +1,11 @@
 import "./App.css";
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect, useState } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link} from "react-router-dom";
 import Home from "./Home/Home";
 import About from "./About/About";
-import ShowList from "./ShowList/ShowList";
-import Form from "./Form/Form";
+import GetShow from "./GetShow/GetShow";
 
 function App() {
   const [movies, setMovies] = useState({});
@@ -26,8 +26,7 @@ function App() {
   
   return (
   <div className="App">
-    <p>Movie Title: {movies?.original_title}</p>
-    <p>Ratings: {movies?.vote_average}</p>
+
     <nav>
       <Link to = "/">
         Home
@@ -35,7 +34,7 @@ function App() {
       <Link to = "/about">
         About
       </Link>
-      <Link to = "/form">
+      <Link to = "/get-show">
         Get Show Recommendations
       </Link>
     </nav>
@@ -43,7 +42,8 @@ function App() {
       <Routes>
         <Route path = "/" element = {<Home />} />
         <Route path = "about" element = {<About />} />
-        <Route path = "form" element = {<Form />} />
+        <Route path = "get-show" element = {<GetShow />} />
+        
       </Routes>
     </main>
     </div>

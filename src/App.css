@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+
+
+}
+
+body{
+  background: #141414;
+  color: white;
 }
 
 html,
@@ -12,13 +19,13 @@ body {
   text-align: center;
 }
 
-nav {
+ nav {
   background: black;
   color: white;
   display: flex;
   align-items: center;
   padding: 0 20px;
-}
+} 
 
 nav h1 {
   margin: 0;
@@ -46,4 +53,4 @@ main {
 
 .genre-list{
   list-style: none;
-}
+} 
