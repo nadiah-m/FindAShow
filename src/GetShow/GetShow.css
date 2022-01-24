@@ -3,3 +3,8 @@ body {
   color: white;
 }
 
+.image {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

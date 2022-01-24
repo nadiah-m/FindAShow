@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./GetShow.css";
 import ShowList from "./components/ShowList";
 import Form from "./components/Form";
-import genres from "./GenreData";
+// import genres from "./GenreData";
+
 
 function GetShow() {
   const [shows, setShows] = useState([]);
@@ -59,7 +60,8 @@ function GetShow() {
   }, [showTypeChecked, time]);
 
   return (
-    <div className="container-fluid show-app">
+   
+    <div className="container-fluid">
       <div className="row">
         <Form
           showTypes={showTypes}
@@ -72,10 +74,12 @@ function GetShow() {
           onChooseTime = {onChooseTime}
         />
         </div>
-        <div className="row">
+        <div className="d-flex flex-row">
         <ShowList shows={shows} />
       </div>
+      
     </div>
+
   );
 }
 

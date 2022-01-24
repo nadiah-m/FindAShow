@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 import Home from "./Home/Home";
