@@ -6,11 +6,11 @@ const ShowList = (props) => {
 
   return (
     <>
-      {props.movies.map((movie, index) => (
-        <div key={movie.title}>
-          <p>{movie.original_title}</p>
+      {props.shows.map((show, index) => (
+        <div key={show.title}>
+     
 
-          <img src = { baseImgURL + movie.poster_path} alt = "movie"></img>
+          <img src = { baseImgURL + show.poster_path} alt = "show"></img>
         </div>
       ))}
     </>

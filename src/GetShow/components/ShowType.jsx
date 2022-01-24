@@ -4,7 +4,6 @@ import React from "react";
 function ShowType(props) {
 
 
-
   return (
     <>
       <h3>Select Type</h3>
