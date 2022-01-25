@@ -6,15 +6,16 @@ import ShowList from "./components/ShowList";
 import Form from "./components/Form";
 import Favourites from "./components/Favourites";
 
-function GetShow() {
+function GetShow(props) {
+  // const [favourites, setFavourites] = useState([""]);
+
+  // const handleAddFavourites = (show) => {
+  //   console.log("click");
+  //   setFavourites([...favourites, show]);
+  // };
+  // console.log(favourites);
+
   const [shows, setShows] = useState([]);
-
-  const [favourites, setFavourites] = useState("");
-
-  const handleAddFavourites = () => {
-    setFavourites("clicked");
-    console.log(favourites);
-  };
 
   const [showTypeChecked, setShowTypeChecked] = useState("");
 
@@ -70,18 +71,15 @@ function GetShow() {
           onChooseTime={onChooseTime}
         />
       </div>
-      <div className="d-flex flex-row row-cols-4">
-        <h3>{showTypeChecked}</h3>
-        <ShowList shows={shows} />
-        
+      <h3>{showTypeChecked}</h3>
+      <div className="d-flex flex-row row-cols-4 flex-wrap">
+        <ShowList
+          shows={shows}
+          handleAddFavourites={props.handleAddFavourites}
+        />
       </div>
 
-      
-      <div className="d-flex flex-row row-cols-4">
-      {/* <h3>Favourites</h3>
-      <Favourites favourites = {favourites} handleAddFavourites = {handleAddFavourites} /> */}
-
-      </div>
+      <div className="d-flex flex-row row-cols-4"></div>
     </div>
   );
 }

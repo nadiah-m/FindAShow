@@ -9,24 +9,38 @@ import GetShow from "./GetShow/GetShow";
 import FavouritesList from "./Favourites/FavouritesList";
 
 function App() {
-  const [favourites, setFavourites] = useState("");
-  
+  const [favourites, setFavourites] = useState([]);
+
+  const handleAddFavourites = (show) => {
+    console.log("click");
+    setFavourites([...favourites, show]);
+  };
+
+  console.log(favourites);
+
   return (
     <div className="App">
       <nav>
         <Link to="/">Home</Link>
         <Link to="/get-show">Get Show Recommendations</Link>
         <Link to="/about">About</Link>
-        <Link to = "/favourites-list">Favourites</Link>
-       
+        <Link to="/favourites-list">Favourites</Link>
       </nav>
       <Outlet />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/get-show" element={<GetShow />} />
-          <Route path="/favourites-list" element={<FavouritesList />} />
+          <Route
+            path="/get-show"
+            element={<GetShow handleAddFavourites={handleAddFavourites} />}
+          />
+          <Route
+            path="/favourites-list"
+            element={
+              <FavouritesList favourites ={favourites} />
+            }
+          />
           <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>
       </main>
