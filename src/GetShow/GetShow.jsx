@@ -79,7 +79,7 @@ function GetShow(props) {
         />
       </div>
 
-      <div className="d-flex flex-row row-cols-4"></div>
+      
     </div>
   );
 }

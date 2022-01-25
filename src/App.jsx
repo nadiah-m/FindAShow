@@ -16,6 +16,14 @@ function App() {
     setFavourites([...favourites, show]);
   };
 
+  const handleRemoveFavourites = (show) => {
+    const newFavouritesList = favourites.filter(
+      (favourite) => favourite.id !== show.id
+    );
+    setFavourites(newFavouritesList);
+    console.log(favourites);
+  };
+
   console.log(favourites);
 
   return (
@@ -38,7 +46,10 @@ function App() {
           <Route
             path="/favourites-list"
             element={
-              <FavouritesList favourites ={favourites} />
+              <FavouritesList
+                favourites={favourites}
+                handleRemoveFavourites={handleRemoveFavourites}
+              />
             }
           />
           <Route path="*" element={<Navigate to="/" replace={true} />} />

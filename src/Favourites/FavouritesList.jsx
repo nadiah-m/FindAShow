@@ -22,6 +22,7 @@ function FavouritesList(props) {
             <div className="overlay d-flex align-items-center justify-content-center">
               <div className="overflow-auto">
                 <p>{show.overview}</p>
+                <button onClick = {() => props.handleRemoveFavourites(show)}>Remove from Favourites</button>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ const ShowList = (props) => {
   const baseImgURL = "https://image.tmdb.org/t/p/w300";
 
   return (
-    <>
+    <div className = "container-fluid">
       {props.shows.map((show, index) => (
         <>
           <div
@@ -24,7 +24,7 @@ const ShowList = (props) => {
           </div>
         </>
       ))}
-    </>
+    </div>
   );
 };
 
