@@ -4,46 +4,44 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./GetShow.css";
 import ShowList from "./components/ShowList";
 import Form from "./components/Form";
-import {Row, Col} from "react-bootstrap";
-// import genres from "./GenreData";
-import {Container} from "react-bootstrap";
+import Favourites from "./components/Favourites";
 
 function GetShow() {
   const [shows, setShows] = useState([]);
 
+  const [favourites, setFavourites] = useState("");
 
-  const [showTypeChecked, setShowTypeChecked] = useState("tv");
+  const handleAddFavourites = () => {
+    setFavourites("clicked");
+    console.log(favourites);
+  };
 
+  const [showTypeChecked, setShowTypeChecked] = useState("");
 
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState(300);
 
   //Type
   const onChooseShowType = (value) => {
- 
     setShowTypeChecked(value);
   };
-  
+
   const onChooseTime = (event) => {
     setTime(event.target.value);
-   
   };
 
-  
   const showTypes = [
     { label: "Movies", value: "movies" },
     { label: "TV series", value: "tv" },
   ];
 
   const handleSubmit = (event) => {
- 
     event.preventDefault();
-
   };
 
-  const API_KEY = import.meta.env.VITE_SOME_KEY
+  const API_KEY = import.meta.env.VITE_SOME_KEY;
 
   const getShowRequest = (showTypeChecked, time) => {
-    const url = `https://api.themoviedb.org/3/discover/${showTypeChecked}?api_key=854888e6719c0f864d6db29cdfe47090&language=en-US&sort_by=popularity.desc&page=1&with_runtime.lte=${time}&with_watch_monetization_types=flatrate`;
+    const url = `https://api.themoviedb.org/3/discover/${showTypeChecked}?api_key=854888e6719c0f864d6db29cdfe47090&language=en-US&sort_by=popularity.desc&page=1&with_runtime.lte=${time}&with_status=0&with_type=0`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -61,7 +59,6 @@ function GetShow() {
   }, [showTypeChecked, time]);
 
   return (
-   
     <div className="container-sm">
       <div className="row">
         <Form
@@ -70,19 +67,22 @@ function GetShow() {
           handleSubmit={handleSubmit}
           showTypes={showTypes}
           showTypeChecked={showTypeChecked}
-        
-
-          onChooseTime = {onChooseTime}
+          onChooseTime={onChooseTime}
         />
-        </div>
-        <div className="d-flex flex-row row-cols-4">
-     
-        <ShowList shows={shows} />
-  
       </div>
-      
-    </div>
+      <div className="d-flex flex-row row-cols-4">
+        <h3>{showTypeChecked}</h3>
+        <ShowList shows={shows} />
+        
+      </div>
 
+      
+      <div className="d-flex flex-row row-cols-4">
+      {/* <h3>Favourites</h3>
+      <Favourites favourites = {favourites} handleAddFavourites = {handleAddFavourites} /> */}
+
+      </div>
+    </div>
   );
 }
 

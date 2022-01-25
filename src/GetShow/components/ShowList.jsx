@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+
 
 const ShowList = (props) => {
   const baseImgURL = "https://image.tmdb.org/t/p/w300";
@@ -17,8 +17,7 @@ const ShowList = (props) => {
           
           <div className = "overlay d-flex align-items-center justify-content-center">
             <p>{show.overview}</p>
-            <br />
-            <p>{show.vote_average}</p>
+            <button onClick = {(show) => props.handleAddFavourites}>Add to Favourites</button>
           </div>
           </div>
           </>
