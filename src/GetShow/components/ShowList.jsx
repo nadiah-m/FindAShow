@@ -1,4 +1,5 @@
 import React from "react";
+import HeartIcon from "./HeartIcon";
 
 const ShowList = (props) => {
   const baseImgURL = "https://image.tmdb.org/t/p/w300";

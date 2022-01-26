@@ -54,8 +54,8 @@ function GetShow(props) {
   }, [showTypeChecked, time]);
 
   return (
-    <div className="container-sm">
-      <div className="row">
+    <div className="container-fluid">
+      
         <Form
           showTypes={showTypes}
           onChooseShowType={onChooseShowType}
@@ -64,14 +64,14 @@ function GetShow(props) {
           showTypeChecked={showTypeChecked}
           onChooseTime={onChooseTime}
         />
-      </div>
+      
       <h3>{showTypeChecked}</h3>
-      <div className="d-flex flex-row row-cols-4 flex-wrap">
+      
         <ShowList
           shows={shows}
           handleAddFavourites={props.handleAddFavourites}
         />
-      </div>
+    
 
       
     </div>

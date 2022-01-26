@@ -36,19 +36,16 @@ function Home(props) {
 
   return (
     <>
-      <div className = "container-fluid">
-       
+      <div className="container-fluid">
         <TrendingMoviesList
           trendingMovies={trendingMovies}
           handleAddFavourites={props.handleAddFavourites}
         />
-       
 
         <TrendingTvList
           trendingTv={trendingTv}
           handleAddFavourites={props.handleAddFavourites}
         />
-        
       </div>
     </>
   );

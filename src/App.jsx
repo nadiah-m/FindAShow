@@ -12,7 +12,7 @@ function App() {
   const [favourites, setFavourites] = useState([]);
 
   const handleAddFavourites = (show) => {
-    console.log("click");
+    alert("Added to Favourites")
     setFavourites([...favourites, show]);
   };
 

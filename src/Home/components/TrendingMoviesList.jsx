@@ -1,4 +1,5 @@
 import React from "react";
+import HeartIcon from "./HeartIcon";
 
 const TrendingMoviesList = (props) => {
   const baseImgURL = "https://image.tmdb.org/t/p/w300";
@@ -22,14 +23,18 @@ const TrendingMoviesList = (props) => {
                     <p>{trendingMovie.overview}</p>
                   </div>
                   <div class="col">
-                  <p>User rating: {trendingMovie.vote_average}</p>
+                    <p>User rating: {trendingMovie.vote_average}</p>
                   </div>
                   <div class="col">
-                  <button
-                    onClick={() => props.handleAddFavourites(trendingMovie)}
-                  >
+                    <button type = "button" class = "btn btn-outline-light btn-sm"
+                      onClick={() => props.handleAddFavourites(trendingMovie)}
+                    > 
+                    <HeartIcon />
+                    <div className ="mr-2">
                     Add to Favourites
-                  </button>
+                    </div>
+    
+                    </button>
                   </div>
                 </div>
               </div>
