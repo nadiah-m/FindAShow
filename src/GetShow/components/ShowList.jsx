@@ -6,9 +6,9 @@ const ShowList = (props) => {
   return (
     <div className = "container-fluid">
       {props.shows.map((show, index) => (
-        <>
+        <div key={show.title}>
           <div
-            key={show.title}
+            
             className="image-container d-flex flex-wrap justify-content-start"
           >
             <img src={baseImgURL + show.poster_path} alt="show"></img>
@@ -22,7 +22,7 @@ const ShowList = (props) => {
               </button>
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );

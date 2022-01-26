@@ -7,13 +7,7 @@ import Form from "./components/Form";
 import Favourites from "./components/Favourites";
 
 function GetShow(props) {
-  // const [favourites, setFavourites] = useState([""]);
-
-  // const handleAddFavourites = (show) => {
-  //   console.log("click");
-  //   setFavourites([...favourites, show]);
-  // };
-  // console.log(favourites);
+ 
 
   const [shows, setShows] = useState([]);
 

@@ -12,9 +12,9 @@ function FavouritesList(props) {
   return (
     <div className = "container-sm">
       {props.favourites.map((show, index) => (
-        <>
+        <div key={index}>
           <div
-            key={show.title}
+            
             className="image-container flex-row d-flex flex-wrap justify-content-start row-cols-4"
           >
             <img onClick={handleClick} src={baseImgURL + show.poster_path} alt="show"></img>
@@ -26,7 +26,7 @@ function FavouritesList(props) {
               </div>
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );
