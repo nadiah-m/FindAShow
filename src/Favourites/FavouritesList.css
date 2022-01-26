@@ -1,17 +1,4 @@
-/* body {
-    background: #141414;
-    color: white;
-  }
-  
-  .image {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  
-  .container {
-    flex-wrap: wrap;
-  }
+
   
   .image-container {
     position: relative;
@@ -39,4 +26,4 @@
     padding: 20px;
     text-align: center;
   }
-   */
+  
