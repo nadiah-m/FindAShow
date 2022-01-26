@@ -3,17 +3,9 @@ body {
   color: white;
 }
 
-.image {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
 
-.container {
-  flex-wrap: wrap;
-}
 
-.image-container {
+/* .image-container {
   position: relative;
   transition: transform 0.2s;
 }
@@ -38,4 +30,4 @@ body {
   font-size: 15px;
   padding: 20px;
   text-align: center;
-}
+} */
