@@ -4,11 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./GetShow.css";
 import ShowList from "./components/ShowList";
 import Form from "./components/Form";
-import Favourites from "./components/Favourites";
 
 function GetShow(props) {
- 
-
   const [shows, setShows] = useState([]);
 
   const [showTypeChecked, setShowTypeChecked] = useState("");
@@ -18,20 +15,17 @@ function GetShow(props) {
   //Type
   const onChooseShowType = (value) => {
     setShowTypeChecked(value);
+    console.log(showTypeChecked);
   };
-
+  console.log(showTypeChecked);
   const onChooseTime = (event) => {
     setTime(event.target.value);
   };
 
   const showTypes = [
-    { label: "Movies", value: "movies" },
+    { label: "Movies", value: "movie" },
     { label: "TV series", value: "tv" },
   ];
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
 
   const API_KEY = import.meta.env.VITE_SOME_KEY;
 
@@ -44,7 +38,6 @@ function GetShow(props) {
 
         if (n) {
           setShows(n);
-          console.log(n);
         }
       });
   };
@@ -55,25 +48,19 @@ function GetShow(props) {
 
   return (
     <div className="container-fluid">
-      
-        <Form
-          showTypes={showTypes}
-          onChooseShowType={onChooseShowType}
-          handleSubmit={handleSubmit}
-          showTypes={showTypes}
-          showTypeChecked={showTypeChecked}
-          onChooseTime={onChooseTime}
-        />
-      
-      <h3>{showTypeChecked}</h3>
-      
-        <ShowList
-          shows={shows}
-          handleAddFavourites={props.handleAddFavourites}
-        />
-    
+      <Form
+        showTypes={showTypes}
+        onChooseShowType={onChooseShowType}
+        showTypes={showTypes}
+        showTypeChecked={showTypeChecked}
+        onChooseTime={onChooseTime}
+      />
 
-      
+      <ShowList
+        shows={shows}
+        handleAddFavourites={props.handleAddFavourites}
+        showTypeChecked={showTypeChecked}
+      />
     </div>
   );
 }

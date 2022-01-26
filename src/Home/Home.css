@@ -2,7 +2,10 @@
     overflow-x: auto;
     flex-wrap: nowrap;
 } */
-
+.body {
+	background: #141414;
+	color: white;
+  }
 
 .overlay {
     position: absolute;

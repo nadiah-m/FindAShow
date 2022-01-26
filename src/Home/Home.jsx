@@ -35,7 +35,7 @@ function Home(props) {
   }, []);
 
   return (
-    <>
+    <div>
       <div className="container-fluid">
         <TrendingMoviesList
           trendingMovies={trendingMovies}
@@ -47,7 +47,7 @@ function Home(props) {
           handleAddFavourites={props.handleAddFavourites}
         />
       </div>
-    </>
+    </div>
   );
 }
 
