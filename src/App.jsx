@@ -37,12 +37,40 @@ function App() {
 
   return (
     <div className="App">
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/get-show">Get Show Recommendations</Link>
-        <Link to="/about">About</Link>
-        <Link to="/favourites-list">Favourites</Link>
-        <SearchBox searchValue={searchValue} handleSearch={handleSearch} />
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div className="collapse navbar-collapse">
+          <ul className="navbar-nav">
+            <li className="nav-item active">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/get-show">
+                Get Show Recommendations
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/about">
+                About
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/favourites-list">
+                Favourites
+              </Link>
+            </li>
+            <li className="nav-item active">
+              <div className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <SearchBox
+                  className="nav-link"
+                  searchValue={searchValue}
+                  handleSearch={handleSearch}
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
       </nav>
 
       <main>
@@ -65,7 +93,15 @@ function App() {
               />
             }
           />
-          <Route path="/search-list" element={<SearchList searchValue={searchValue} handleSearch={handleSearch} handleAddFavourites={handleAddFavourites}/>} 
+          <Route
+            path="/search-list"
+            element={
+              <SearchList
+                searchValue={searchValue}
+                handleSearch={handleSearch}
+                handleAddFavourites={handleAddFavourites}
+              />
+            }
           />
           <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import HeartIcon from "./HeartIcon";
+import HeartIcon from "./components/HeartIcon";
 import "./SearchList.css";
 
 function SearchList(props) {
@@ -8,8 +8,10 @@ function SearchList(props) {
 
   const [searchList, setSearchList] = useState([]);
 
+  const API_KEY = import.meta.env.VITE_SOME_KEY;
+
   const getSearchList = () => {
-    const url = `https://api.themoviedb.org/3/search/multi?api_key=854888e6719c0f864d6db29cdfe47090&language=en-US&query=${props.searchValue}&page=1`;
+    const url = `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=${props.searchValue}&page=1`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
