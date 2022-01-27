@@ -9,9 +9,9 @@ function Home(props) {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [trendingTv, setTrendingTv] = useState([]);
 
-  const API_KEY = import.meta.env.VITE_SOME_KEY;
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
-  const getTrendingMovies = (API_KEY) => {
+  const getTrendingMovies = () => {
     const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
     fetch(url)
       .then((response) => response.json())
@@ -21,7 +21,7 @@ function Home(props) {
       });
   };
 
-  const getTrendingTv = (API_KEY) => {
+  const getTrendingTv = () => {
     const url = `https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}`;
     fetch(url)
       .then((response) => response.json())
