@@ -11,7 +11,7 @@ function Home(props) {
 
   const API_KEY = import.meta.env.VITE_SOME_KEY;
 
-  const getTrendingMovies = () => {
+  const getTrendingMovies = (API_KEY) => {
     const url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
     fetch(url)
       .then((response) => response.json())
@@ -21,7 +21,7 @@ function Home(props) {
       });
   };
 
-  const getTrendingTv = () => {
+  const getTrendingTv = (API_KEY) => {
     const url = `https://api.themoviedb.org/3/trending/tv/day?api_key=${API_KEY}`;
     fetch(url)
       .then((response) => response.json())
