@@ -30,7 +30,7 @@ function GetShow(props) {
   const API_KEY = import.meta.env.VITE_API_KEY;
 
   const getShowRequest = (showTypeChecked, time) => {
-    const url = `https://api.themoviedb.org/3/discover/${showTypeChecked}?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=1&with_runtime.lte=${time}&with_status=0&with_type=0`;
+    const url = `https://api.themoviedb.org/3/discover/${showTypeChecked}?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&page=1&with_runtime.lte=${time}&with_status=0&with_type=0`;
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
