@@ -19,7 +19,7 @@ const ShowList = (props) => {
       </div>
       <div className="row row-cols-auto g-3 d-flex m-3">
         {props.shows.map((show, index) => (
-          <div key={show.title}>
+          <div key={index}>
             <div className="image-container col overflow-auto">
               <img src={baseImgURL + show.poster_path} alt="show"></img>
 
@@ -27,16 +27,16 @@ const ShowList = (props) => {
                 <div className="col">
                   <p>{show.overview}</p>
                 </div>
-                <div class="col">
+                <div className="col">
                   <p>User rating: {show.vote_average}</p>
                 </div>
-                <div class="col">
+                <div className="col">
                   <button
                     type="button"
-                    class="btn btn-outline-light btn-sm"
+                    className="btn btn-outline-light btn-sm"
                     onClick={() => props.handleAddFavourites(show)}
                   >
-                    <HeartIcon /> 
+                    <HeartIcon />
                     <div className="mr-2">Add to Favourites</div>
                   </button>
                 </div>

@@ -19,21 +19,20 @@ const TrendingMoviesList = (props) => {
                   alt="show"
                 ></img>
                 <div className="overlay align-items-center overflow-scroll row row-cols-1">
-                  <div class="col">
+                  <div className="col">
                     <p>{trendingMovie.overview}</p>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <p>User rating: {trendingMovie.vote_average}</p>
                   </div>
-                  <div class="col">
-                    <button type = "button" class = "btn btn-outline-light btn-sm"
+                  <div className="col">
+                    <button
+                      type="button"
+                      className="btn btn-outline-light btn-sm"
                       onClick={() => props.handleAddFavourites(trendingMovie)}
-                    > 
-                    <HeartIcon />
-                    <div className ="mr-2">
-                    Add to Favourites
-                    </div>
-    
+                    >
+                      <HeartIcon />
+                      <div className="mr-2">Add to Favourites</div>
                     </button>
                   </div>
                 </div>

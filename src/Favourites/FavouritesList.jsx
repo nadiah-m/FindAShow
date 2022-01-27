@@ -30,13 +30,15 @@ function FavouritesList(props) {
                 </div>
                 <div className="col">
                   <p>User rating: {show.vote_average}</p>
-                  </div>
-                  <div className="col">
-                  <button type = "button" class = "btn btn-outline-light btn-sm" onClick={() => props.handleRemoveFavourites(show)}>
+                </div>
+                <div className="col">
+                  <button
+                    type="button"
+                    className="btn btn-outline-light btn-sm"
+                    onClick={() => props.handleRemoveFavourites(show)}
+                  >
                     <RemoveIcon />
-                    <div className="mr-2">
-                    Remove from Favourites
-                    </div>
+                    <div className="mr-2">Remove from Favourites</div>
                   </button>
                 </div>
               </div>

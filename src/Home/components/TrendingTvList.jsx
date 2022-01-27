@@ -19,16 +19,16 @@ const TrendingTvList = (props) => {
                   alt="show"
                 ></img>
                 <div className="overlay align-items-center overflow-scroll row row-cols-1">
-                  <div class="col">
+                  <div className="col">
                     <p>{trendingSeries.overview}</p>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <p>User rating: {trendingSeries.vote_average}</p>
                   </div>
-                  <div class="col">
+                  <div className="col">
                     <button
                       type="button"
-                      class="btn btn-outline-light btn-sm"
+                      className="btn btn-outline-light btn-sm"
                       onClick={() => props.handleAddFavourites(trendingSeries)}
                     >
                       <HeartIcon />
