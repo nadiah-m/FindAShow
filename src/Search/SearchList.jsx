@@ -8,7 +8,7 @@ function SearchList(props) {
 
   const [searchList, setSearchList] = useState([]);
 
-  const API_KEY = import.meta.env.VITE_SOME_KEY;
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const getSearchList = () => {
     const url = `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=${props.searchValue}&page=1`;
@@ -60,7 +60,6 @@ function SearchList(props) {
         </div>
       </div>
     </div>
-
   );
 }
 export default SearchList;
